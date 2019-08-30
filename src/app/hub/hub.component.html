@@ -1,12 +1,24 @@
-<div class="row">
+<div class="container">
   <ng-progress></ng-progress>
-  <blockquote class="blockquote text-center">
-    <p class="mb-0">Name: {{profile.name}}</p>
-    <p class="mb-0">Email: {{profile.email}}</p>
-    <p class="mb-0">Number of repositories: {{profile.repo}}</p>
-    <p class="mb-0">Followers: {{profile.followers}}</p>
-    <p class="mb-0">Following: {{profile.following}}</p>
-    <p class="mb-0">bio: {{profile.bio}}</p>
-    <!-- <footer class="blockquote-footer"><cite>{{profile.}}</cite></footer> -->
-  </blockquote>
+  <div class="row">
+    <div class="col-sm-6">
+      <div *ngIf = "cece">
+          <img src= "{{cece.avatar_url}}" class="img">
+          <p> Name: {{cece.name}}</p>
+          <p>Email:{{cece.email}}</p>
+          <p>Number of repositories:{{cece.public_repos}}</p>
+          <p>Followers:{{cece.followers}}</p>
+          <p>Following:{{cece.following}}</p>
+          <p>Bio: {{cece.bio}}</p>
+      </div>
+      
+    </div>
+
+    <div class="col=sm-6">
+      User name: <input type="text" placeholder="Search.."  [(ngModel)]="userinfo">
+      <button  class="btn btn-info"  (click)="find()"> <i class="fa fa-search"></i></button>
+    </div>
+  </div>
 </div>
+
+
