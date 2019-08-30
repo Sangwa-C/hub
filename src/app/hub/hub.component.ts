@@ -28,7 +28,11 @@ export class HubComponent implements OnInit {
     this.http.get<sangwa>("https://api.github.com/users/daneden?access_token=722ab6bdea3292c79cf883db4973b22c4c715f50").subscribe(data=>{
       // Succesful API request
       this.profile = new Profile(data.name, data.email, data.public_repos, data.followers, data.following, data.bio)
-    })
+    }
+    // , err=>{
+    //   this.profile
+    // }
+    )
   }
 
 }
