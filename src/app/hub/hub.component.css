@@ -3,3 +3,10 @@
   width:300px;
   border-radius: 50%;
 }
+
+.all{
+  background-image: url("https://img.freepik.com/free-vector/modern-dark-texture-background_1035-11632.jpg?size=626&ext=jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:900px;
+}

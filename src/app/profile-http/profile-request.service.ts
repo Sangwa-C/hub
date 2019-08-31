@@ -1,18 +1,20 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import {environment } from '../../environments/environment';
-// import {Profile} from "../profile"
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {environment } from '../../environments/environment';
+import {Profile} from "../profile"
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ProfileRequestService {
+@Injectable({
+  providedIn: 'root'
+})
+export class ProfileRequestService {
   
-//   profile: Profile;
+  profile: Profile;
+  userinfo:string = "";
+  cece: any;
 
-//   constructor(private http:HttpClient) {
+  constructor(private http:HttpClient) {
 //     this.profile =  new Profile ("","",0,0,0,"")
-//    }
+   }
 
 //    profileRequest(){
 //     interface sangwa{
@@ -23,6 +25,26 @@
 //       following:number;
 //       bio: string;
 //     }
+
+
+find() {
+  let promise = new Promise ((resolve,reject) =>{
+    this.http.get("https://api.github.com/users/" + this.userinfo +  "?access_token=722ab6bdea3292c79cf883db4973b22c4c715f50")
+    .subscribe(cece=>{
+      this.cece = cece;
+      console.log(this.cece)
+      resolve()
+  }, 
+  error=>{
+    this.profile.name="pls rewrite the url"
+    this.profile.email="verify"
+    reject()
+  }
+)
+  })
+} 
+
+
 
 //     let promise = new Promise((resolve,reject)=>{
 //       this.http.get<sangwa>(environment.apiUrl).toPromise().then(response=>{
@@ -49,4 +71,4 @@
 //       })
 //       return promise  
 //   }
-// }
+}
