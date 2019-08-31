@@ -38,21 +38,21 @@ export class HubComponent implements OnInit {
     // }
   }
 
-  //     find() {
-  //       let promise = new Promise ((resolve,reject) =>{
-  //         this.http.get("https://api.github.com/users/" + this.userinfo +  "?access_token=722ab6bdea3292c79cf883db4973b22c4c715f50")
-  //         .subscribe(cece=>{
-  //           this.cece = cece;
-  //           console.log(this.cece)
-  //           resolve()
-  //       }, 
-  //       error=>{
-  //         this.profile.name="pls rewrite the url"
-  //         this.profile.email="verify"
-  //       }
-  //     )
-  //       })
-  // } 
+      find() {
+        let promise = new Promise ((resolve,reject) =>{
+          this.http.get("https://api.github.com/users/" + this.userinfo +  "?access_token=722ab6bdea3292c79cf883db4973b22c4c715f50")
+          .subscribe(cece=>{
+            this.cece = cece;
+            console.log(this.cece)
+            resolve()
+        }, 
+        error=>{
+          this.profile.name="pls rewrite the url"
+          this.profile.email="verify"
+        }
+      )
+        })
+  } 
 
 //     let promise = new Promise((resolve,reject)=>{
 //       this.http.get<sangwa>(environment.apiUrl).toPromise().then(response=>{

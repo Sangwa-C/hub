@@ -1,9 +1,26 @@
-<div class="all">
+<div class="all" >
+  <div  class="bar">
+    <div class="abana">
+      <div class="row">
+        <div class="clo-sm-6">
+          <img src="https://cdn.tutsplus.com/net/uploads/2013/08/github-collab-retina-preview.gif" class="img1">
+        </div>
+        <div class="clo-sm-6">
+          <h1>Github Search</h1>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
+  
+    <div class="intro">
+      <h1>Welcome to Our Page!</h1>
+      <p>Here we help find all the important information about a Github account hold, you only to type her/ his name in the search field and if you want to checkout the reposiories dont hesitate to hit he button!</p>
+    </div>
     <ng-progress></ng-progress>
     <div class="row">
       <div class="col-sm-6">
-        <div *ngIf = "cece">
+        <!-- <div *ngIf = "cece"> -->
             <img src= "{{cece.avatar_url}}" class="img">
             <p> Name: {{cece.name}}</p>
             <p>Email:{{cece.email}}</p>
@@ -12,17 +29,18 @@
             <p>Following: {{cece.following}}</p>
             <p>Created on: {{cece.created_at|date}}</p>
             <p>Bio: {{cece.bio}}</p>
-  
-        </div>
-        
+            <a href={{cece.html_url}}> <button class="bt btn-success">Checkout Repository</button></a>
+        <!-- </div> -->
       </div>
-  
       <div class="col=sm-6">
         User name: <input type="text" placeholder="Search.."  [(ngModel)]="userinfo">
         <button  class="btn btn-info"  (click)="find()"> <i class="fa fa-search"></i></button>
       </div>
     </div>
   </div>
+  <footer>
+    <p>Allright reserved © Chelsea 2019</p>
+  </footer>
 </div>
 
 
