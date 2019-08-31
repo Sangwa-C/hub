@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Profile} from "../profile"
+import { environment } from 'src/environments/environment.prod';
+import { Belongings } from '../belongings';
 // import { ProfileRequestService} from "../profile-http/profile-request.service"
 
 @Component({
@@ -11,6 +13,7 @@ import { Profile} from "../profile"
 export class HubComponent implements OnInit {
 
   profile:Profile;
+  belongings:Belongings[];
   userinfo:string = "";
   cece: any;
 
@@ -54,6 +57,26 @@ export class HubComponent implements OnInit {
         })
   } 
 
+  promise = new Promise ((resolve,reject)=>{
+
+    this.http.get("https://api.github.com/users/" + this.userinfo +"/repos?access_token=" + "722ab6bdea3292c79cf883db4973b22c4c715f50").toPromise().then(cece=>{
+      for (var i in cece){
+        this.belongings.push(new Belongings(cece [i].name))
+      }
+      resolve();
+    },
+    error=>{
+      this.profile.name="try again"
+      reject()
+    })
+    console.log(this.belongings)
+  })
+
+}
+
+
+
+
 //     let promise = new Promise((resolve,reject)=>{
 //       this.http.get<sangwa>(environment.apiUrl).toPromise().then(response=>{
 //         this.profile.name = response.name
@@ -87,4 +110,4 @@ export class HubComponent implements OnInit {
   //     // Succesful API request
   //     this.profile = new Profile(data.name, data.email, data.public_repos, data.followers, data.following, data.bio)
   //   }
-  }
+ 

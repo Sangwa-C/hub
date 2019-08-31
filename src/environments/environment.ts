@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:"access_token=722ab6bdea3292c79cf883db4973b22c4c715f50"
+  apiUrl:"722ab6bdea3292c79cf883db4973b22c4c715f50"
 };
 
 /*
