@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HubComponent } from './hub/hub.component';
+import { DecorDirective } from './decor.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HubComponent,
+    DecorDirective,
   ],
   imports: [
     BrowserModule,
