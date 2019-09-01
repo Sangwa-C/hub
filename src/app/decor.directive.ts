@@ -11,7 +11,7 @@ export class DecorDirective {
    }
 
    private textDeco(action:string){
-    this.elem.nativeElement.style.background = '#181717';
+    this.elem.nativeElement.style.background = '#3D3C3C';
     // this.elem.nativeElement.style.background = 'none';
    }
 

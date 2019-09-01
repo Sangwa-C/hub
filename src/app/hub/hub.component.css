@@ -9,16 +9,43 @@
   background-image: url("https://wallpaperplay.com/walls/full/c/f/2/107667.jpg");
   background-size:cover;
   background-repeat:no-repeat;
-  height:900px;
+  height:1200px;
+}
+
+#search{
+  padding-top: 150px;
 }
 
 .bar{
   padding-top:100px;
-  /* background: grey; */
 }
 
 .abana{
   background: #181717;
+  font-family: 'Courgette', cursive;
+}
+
+.container{
+  font-family: 'Courgette', cursive;
+  font-size:1.5em;
+}
+
+#bed{
+  border-radius: 20%;
+  background-color: rgb(47, 43, 49);
+  color:white;
+ 
+}
+
+#but{
+  border-radius: 40%;
+  padding:15px;
+  border:solid rgb(70, 65, 65);
+}
+
+input{
+  height:39px;
+  border-radius: 10px;
 }
 
 h1{
@@ -38,4 +65,5 @@ footer{
   bottom:0;
   width:100%;
   text-align:center;
+  font-family: 'Courgette', cursive;
 }

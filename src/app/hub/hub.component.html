@@ -15,13 +15,14 @@
   
     <div class="intro">
       <h1>Welcome to Our Page!</h1>
-      <p>Here we help find all the important information about a Github account hold, you only to type her/ his name in the search field and if you want to checkout the reposiories dont hesitate to hit he button!</p>
+      <p>Here we help find all the important information about a Github account hold, you only to type her/ his name in the search field and if you want to checkout the reposiories dont hesitate to hit the button!</p>
+      
     </div>
     <ng-progress></ng-progress>
     <div class="row">
       <div class="col-sm-6">
         <div *ngIf = "cece">
-            <img src= "{{cece.avatar_url}}" class="img">
+            <img src= "{{cece.avatar_url}}" class="img"><br>
             <p appDecor> Name: {{cece.name}}</p>
             <p appDecor>Email:{{cece.email}}</p>
             <p appDecor>Number of repositories: {{cece.public_repos}}</p>
@@ -29,19 +30,22 @@
             <p appDecor>Following: {{cece.following}}</p>
             <p appDecor>Created on: {{cece.created_at|date}}</p>
             <p appDecor>Bio: {{cece.bio}}</p>
-            <a href={{cece.html_url}} appDecor > <button class="bt btn-success">Checkout Repository</button></a>
+            <a href={{cece.html_url}} appDecor > <button class="btn btn-success" id="but">Checkout Repository</button></a>
         </div>
       </div>
-      <div class="col=sm-6">
-        User name: <input type="text" placeholder="Search.."  [(ngModel)]="userinfo">
-        <button  class="btn btn-info"  (click)="find()"> <i class="fa fa-search"></i></button>
-        <div *ngFor="let khaki of belonging">
-            <p>repositories: {{khaki.name}}</p>
+      <div id="search">
+        <div class="col=sm-6" >
+          User name: <input type="text" placeholder=" Username..."  [(ngModel)]="userinfo">
+          <button (click)="find()" id="bed"><i class="fa fa-search" ></i></button>
+          <div *ngFor="let khaki of belonging">
+            <!-- <p>repositories: {{khaki.name}}</p> -->
+          </div>
         </div>
-   
-      </div>
+      <!-- </div> -->
+  
     </div>
   </div>
+</div>  
   <footer>
     <p>Allright reserved © Chelsea 2019</p>
   </footer>
