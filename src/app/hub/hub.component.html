@@ -29,6 +29,7 @@
             <p appDecor>Followers: {{cece.followers}}</p>
             <p appDecor>Following: {{cece.following}}</p>
             <p appDecor>Created on: {{cece.created_at|date}}</p>
+            <p appDecor>Created for : {{cece.created_at|dCounting}} days</p>
             <p appDecor>Bio: {{cece.bio}}</p>
             <a href={{cece.html_url}} appDecor > <button class="btn btn-success" id="but">Checkout Repository</button></a>
         </div>
