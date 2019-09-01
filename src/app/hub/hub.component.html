@@ -20,17 +20,17 @@
     <ng-progress></ng-progress>
     <div class="row">
       <div class="col-sm-6">
-        <!-- <div *ngIf = "cece"> -->
+        <div *ngIf = "cece">
             <img src= "{{cece.avatar_url}}" class="img">
-            <p> Name: {{cece.name}}</p>
-            <p>Email:{{cece.email}}</p>
-            <p>Number of repositories: {{cece.public_repos}}</p>
-            <p>Followers: {{cece.followers}}</p>
-            <p>Following: {{cece.following}}</p>
-            <p>Created on: {{cece.created_at|date}}</p>
-            <p>Bio: {{cece.bio}}</p>
-            <a href={{cece.html_url}}> <button class="bt btn-success">Checkout Repository</button></a>
-        <!-- </div> -->
+            <p appDecor> Name: {{cece.name}}</p>
+            <p appDecor>Email:{{cece.email}}</p>
+            <p appDecor>Number of repositories: {{cece.public_repos}}</p>
+            <p appDecor>Followers: {{cece.followers}}</p>
+            <p appDecor>Following: {{cece.following}}</p>
+            <p appDecor>Created on: {{cece.created_at|date}}</p>
+            <p appDecor>Bio: {{cece.bio}}</p>
+            <a href={{cece.html_url}} appDecor > <button class="bt btn-success">Checkout Repository</button></a>
+        </div>
       </div>
       <div class="col=sm-6">
         User name: <input type="text" placeholder="Search.."  [(ngModel)]="userinfo">
