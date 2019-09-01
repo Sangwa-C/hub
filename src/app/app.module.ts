@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HubComponent } from './hub/hub.component';
 import { DecorDirective } from './decor.directive';
+import { DCountingPipe } from './d-counting.pipe';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DecorDirective } from './decor.directive';
     AppComponent,
     HubComponent,
     DecorDirective,
+    DCountingPipe,
   ],
   imports: [
     BrowserModule,
