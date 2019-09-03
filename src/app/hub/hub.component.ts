@@ -43,7 +43,7 @@ export class HubComponent implements OnInit {
 
       find() {
         let promise = new Promise ((resolve,reject) =>{
-          this.http.get("https://api.github.com/users/" + this.userinfo +  "?access_token=722ab6bdea3292c79cf883db4973b22c4c715f50")
+          this.http.get("https://api.github.com/users/" + this.userinfo +  "?access_token=" + environment.apiUrl)
           .subscribe(cece=>{
             this.cece = cece;
             console.log(this.cece)
@@ -59,7 +59,7 @@ export class HubComponent implements OnInit {
 
   promise = new Promise ((resolve,reject)=>{
 
-    this.http.get("https://api.github.com/users/" + this.userinfo +"/repos?access_token=" + "722ab6bdea3292c79cf883db4973b22c4c715f50").toPromise().then(cece=>{
+    this.http.get("https://api.github.com/users/" + this.userinfo +"/repos?access_token=" + environment.apiUrl ).toPromise().then(cece=>{
       for (var i in cece){
         this.belongings.push(new Belongings(cece [i].name))
       }
